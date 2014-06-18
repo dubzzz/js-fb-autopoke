@@ -17,7 +17,7 @@ On *Firefox*, *Google Chrome*:
 
 Download the module `Greasemonkey` and create a new script. `Greasemonkey` will automatically run the script each time you go on poke webpage.
 
-The source code should be:
+The source code should start with:
 ```JavaScript
 // ==UserScript==
 // @name        poke

@@ -1,4 +1,4 @@
-#js-fb-autopoke
+# js-fb-autopoke
 
 Auto-poke script for Facebook written in JavaScript. You need to be on the webpage https://www.facebook.com/pokes/?notif_t=poke in order to launch this script.
 

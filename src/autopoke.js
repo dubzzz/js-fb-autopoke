@@ -1,23 +1,23 @@
-/**
-    Auto-poke script for Facebook US
-    
-    For other versions, replace "Poke Back" by the label used in your version
-*/
+/*
+ *  Auto-poke script for Facebook US and UK
+ *
+ *  For other versions, replace "poke back" by the label used in your version
+ */
 
 var deSuite = 0;
 var noPokes = 0;
 
 function poke()
 {
-    console.log("Calling poke()..")
-    
+    console.log("Calling poke()...")
+
     /* Auto-poke part */
     elt_links = document.getElementsByTagName("a");
     var deSuitePrev = deSuite;
     for (var i = 0 ; i != elt_links.length; i++)
     {
         elt_link = elt_links[i];
-        if (elt_link.innerHTML.includes("Poke Back"))
+        if (elt_link.innerHTML.toLowerCase().includes("poke back"))
         {
             deSuite++;
             var nbPokesDiv = document.getElementById("nb_pokes_div");
@@ -25,7 +25,7 @@ function poke()
             elt_link.click();
         }
     }
-    
+
     /* Make it more real */
     if (deSuitePrev == deSuite)
     {
@@ -35,31 +35,31 @@ function poke()
     {
         noPokes = 0;
     }
-    
+
     if (deSuite == 0)
     {
-        console.log("Calling poke().. (0)")
+        console.log("Calling poke()... (0)")
         setTimeout(poke, 1000+Math.round(Math.random()*600000));
     }
     else if (deSuitePrev == deSuite && noPokes > 5)
     {
-        console.log("Calling poke().. (1)")
+        console.log("Calling poke()... (1)")
         setTimeout(poke, 1000+Math.round(Math.random()*120000));
         deSuite = 0;
     }
     else if (deSuite <= 6)
     {
-        console.log("Calling poke().. (2)")
+        console.log("Calling poke()... (2)")
         setTimeout(poke, 1000+Math.round(Math.random()*30000));
     }
     else if (deSuite >= 50)
     {
-        console.log("Calling poke().. (3)")
+        console.log("Calling poke()... (3)")
         setTimeout(poke, 1000+Math.round(Math.random()*120000));
     }
     else
     {
-        console.log("Calling poke().. (4)")
+        console.log("Calling poke()... (4)")
         setTimeout(poke, 1000);
     }
 }
@@ -80,4 +80,3 @@ nbPokesDiv.style.fontSize = "0.7em";
 document.body.appendChild(nbPokesDiv);
 
 poke();
-

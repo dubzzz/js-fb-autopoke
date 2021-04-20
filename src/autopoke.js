@@ -12,7 +12,7 @@ function poke()
     console.log("Calling poke()..")
     
     /* Auto-poke part */
-    elt_links = document.getElementsByTagName("a");
+    elt_links = document.getElementsByTagName("span");
     var deSuitePrev = deSuite;
     for (var i = 0 ; i != elt_links.length; i++)
     {
